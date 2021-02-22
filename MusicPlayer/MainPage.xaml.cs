@@ -32,8 +32,8 @@ namespace MusicPlayer
             instance                                  = this;
             IMusic sampleMusic                        = new SampleMusic();
             /*　もし曲名とアーティスト名を変えたい場合はこうする
-            ((IMusicNameSetter)sampleMusic).MusicName = "NameChanged";
-            ((IMusicArtistSetter)sampleMusic).Artist  = "ArtistChanged";
+            ((IMusicNameSetter)sampleMusic).MusicName = "NewName";
+            ((IMusicArtistSetter)sampleMusic).Artist  = "NewArtistName";
             */
             sampleMusic.Play();
         }
@@ -43,7 +43,7 @@ namespace MusicPlayer
             return instance;
         }
 
-        public TextBlock textBlock
+        public UIElement Element
         {
             get => NameDisplay;
         }

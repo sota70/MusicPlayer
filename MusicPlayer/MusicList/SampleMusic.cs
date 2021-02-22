@@ -28,7 +28,7 @@ namespace MusicPlayer.MusicList
         public void Play()
         {
             IElementGetter nameDisplayGetter = MainPage.getInstance();
-            TextBlock nameDisplay            = nameDisplayGetter.textBlock;
+            TextBlock nameDisplay            = (TextBlock)nameDisplayGetter.Element;
             // ※補足 Environment.NewLine => 改行
             nameDisplay.Text                 = "The music name is : " + MusicName + Environment.NewLine + 
                                                "By " + Artist;
