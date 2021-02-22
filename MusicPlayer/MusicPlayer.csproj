@@ -122,6 +122,8 @@
     <Compile Include="Interface\IElementGetter.cs" />
     <Compile Include="Interface\IMusicArtistGetter.cs" />
     <Compile Include="Interface\IMusicArtistSetter.cs" />
+    <Compile Include="Interface\IMusicDescriptionGetter.cs" />
+    <Compile Include="Interface\IMusicDescriptionSetter.cs" />
     <Compile Include="Interface\IMusicNameSetter.cs" />
     <Compile Include="Interface\IMusicNameGetter.cs" />
     <Compile Include="MainPage.xaml.cs">
