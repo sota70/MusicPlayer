@@ -1,5 +1,6 @@
 ﻿using MusicPlayer.MusicList;
 using MusicPlayer.Interface;
+using MusicPlayer.Data;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -29,13 +30,17 @@ namespace MusicPlayer
         public MainPage()
         {
             this.InitializeComponent();
-            instance                                  = this;
-            IMusic sampleMusic                        = new SampleMusic();
-            /*　もし曲名とアーティスト名を変えたい場合はこうする
-            ((IMusicNameSetter)sampleMusic).MusicName = "NewName";
-            ((IMusicArtistSetter)sampleMusic).Artist  = "NewArtistName";
-            */
-            sampleMusic.Play();
+            instance           = this;
+            IMusic sampleMusic = new SampleMusic();
+            IMusic shapeOfYou  = new ShapeOfYou();
+            DataManager.SetData(sampleMusic);
+            DataManager.SetData(shapeOfYou);
+            // IMusicインターフェースとDataManagerクラスの挙動確認
+            IMusic sampleMusicFromDataBase = (IMusic)DataManager.GetData(sampleMusic);
+            IMusic shapeOfYouFromDataBase  = (IMusic)DataManager.GetData(shapeOfYou);
+            sampleMusicFromDataBase.Play();
+            shapeOfYouFromDataBase.Play();
+            DataManager.SwitchDataPosition(sampleMusicFromDataBase, shapeOfYouFromDataBase);
         }
 
         public static MainPage getInstance()
@@ -43,9 +48,14 @@ namespace MusicPlayer
             return instance;
         }
 
-        public UIElement Element
+        public List<UIElement> Element
         {
-            get => NameDisplay;
+            get
+            {
+                var elementList = new List<UIElement>();
+                elementList.Add(MusicListButton);
+                return elementList;
+            }
         }
     }
 }

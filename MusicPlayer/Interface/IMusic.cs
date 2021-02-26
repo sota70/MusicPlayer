@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MusicPlayer
 {
-    public interface IMusic : IMusicNameGetter, IMusicNameSetter, IMusicArtistGetter, IMusicArtistSetter, IMusicDescriptionGetter, IMusicDescriptionSetter
+    public interface IMusic : IMusicReadable, IMusicSettable
     {
         void Play();
     }

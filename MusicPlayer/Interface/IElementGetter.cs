@@ -8,8 +8,9 @@ using Windows.UI.Xaml.Controls;
 
 namespace MusicPlayer.Interface
 {
+    // 他のクラスでもMainPageのUIElementだけにアクセスできるように作った
     public interface IElementGetter
     {
-        UIElement Element { get; }
+        List<UIElement> Element { get; }
     }
 }

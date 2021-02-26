@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace MusicPlayer
 {
-    public interface IMusicArtistSetter
+    public interface IMusicSettable
     {
-        string Artist { set; }
+        string MusicName   { set; }
+        string Artist      { set; }
+        string Description { set; }
     }
 }

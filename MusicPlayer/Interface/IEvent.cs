@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MusicPlayer
+namespace MusicPlayer.Interface
 {
-    public interface IMusicArtistGetter
+    interface IEvent
     {
-        string Artist { get; }
+        void registerEvents();
     }
 }

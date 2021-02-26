@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace MusicPlayer
 {
-    public interface IMusicDescriptionGetter
+    public interface IMusicReadable
     {
+        string MusicName   { get; }
+        string Artist      { get; }
         string Description { get; }
     }
 }

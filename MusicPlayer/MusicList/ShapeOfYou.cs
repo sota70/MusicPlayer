@@ -3,21 +3,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Windows.UI.Xaml.Controls;
 using MusicPlayer.Interface;
+using Windows.UI.Xaml.Controls;
 
 namespace MusicPlayer.MusicList
 {
-    class SampleMusic : IMusic
+    class ShapeOfYou : IMusic
     {
-        private string name        = "Sample";
-        private string artist      = "Sota";
-        private string description = "これはサンプルの曲です";
+        private string musicName   = "ShapeOfYou";
+        private string artist      = "EdSheeran";
+        private string description = "This is one of my favorite songs";
 
         public string MusicName
         {
-            get => name;
-            set => name = value;
+            get => musicName;
+            set => musicName = value;
         }
 
         public string Artist
@@ -31,7 +31,6 @@ namespace MusicPlayer.MusicList
             get => description;
             set
             {
-                // もし説明文が無かったら”説明なし”と置き換える
                 description            = value;
                 bool descriptionExists = description == null || description.Equals("");
                 if (descriptionExists)
@@ -43,7 +42,7 @@ namespace MusicPlayer.MusicList
 
         public void Play()
         {
-            Console.WriteLine("sampleMusic");
+            Console.WriteLine("shapeOfYou");
             Console.ReadLine();
         }
     }

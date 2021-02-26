@@ -5,8 +5,11 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
+using Windows.ApplicationModel.Core;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI;
+using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -70,6 +73,18 @@ namespace MusicPlayer
                 }
                 // 現在のウィンドウがアクティブであることを確認します
                 Window.Current.Activate();
+
+                // Get the application view title bar
+                ApplicationViewTitleBar formattableTitleBar = ApplicationView.GetForCurrentView().TitleBar;
+
+                // Make the title bar transparent
+                formattableTitleBar.ButtonBackgroundColor   = Colors.Transparent;
+
+                // Get the core application view title bar
+                CoreApplicationViewTitleBar coreTitleBar    = CoreApplication.GetCurrentView().TitleBar;
+
+                // Extend the core application view into title bar
+                coreTitleBar.ExtendViewIntoTitleBar         = true;
             }
         }
 
